@@ -1,51 +1,126 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+  <head>
+    <script>
+      window.addEventListener("load", () => {
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker
+          .register("sw.js", { scope: "./" })
+          .then(function (reg) {});
+        }
+      });
+    </script>
+    <link rel="manifest" href="manifest.json" />
+
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, width=device-width, viewport-fit=cover"
+      />
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
+      crossorigin="anonymous"
+      />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+      crossorigin="anonymous"></script>
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>Rocket Leaste</title>
+  </head>
+
+  <body>
+    <main class="container-fluid">
+      <div class="slidebar">
+        <div class="logo">
+          <a class="" href="#"><img class="img_logo" src="img/logo.png" /></a>
         </div>
-        <script src="cordova.js"></script>
-        <script src="js/index.js"></script>
+        <ul>
+          <h5 style="color: white; padding: 3px; margin-top: 15px;
+            text-decoration: underline">Liste des hitboxes :</h5>
+        </ul>
+        <ul id="all_lists">
+          <li><a href="#" name="octane" onclick="callHitbox('Octane')">Octane</a></li>
+          <li><a href="#" name="hybride"  onclick="callHitbox('Hybride')">Hybride</a></li>
+        </ul>
+        <div class="button_holder">
+          <button class="add_list_btn" onclick="add_hibox()">+</button>
+          <img class="ynov_logo" src="img/logo_ynov_campus_rvb_blanc.png" />
+        </div>
+      </div>
+      <div class="main">
+        <ul class="topbar clearfix">
+          <li><a href="#" style="width: max-content;"><h1 style="color: white
+                !important;">Rocket Leaste</h1></a></li>
+          <li><a
+              href="https://developer.mozilla.org/fr/docs/Web/Progressive_web_apps"
+              style="width: max-content;"><img class="img_top_menu"
+                src="img/pwa.png" /></a></li>
+          <li><a href="https://cordova.apache.org/" style="width: max-content;"><img
+                class="img_top_menu" src="img/cordova.png" /></a></li>
+        </ul>
+        <div class="mainContent clearfix">
+          <div id="active_list">
+            <!-- <div class="octane">
+              <h4>L'octane : </h4>
+              <p class="description_octane">Ceci est une decription. Ceci est
+                une decription. Ceci est une decription. Ceci est une
+                decription. Ceci est une decription. Ceci est une decription.
+                Ceci est une decription. </p>
+            </div> -->
+          </div>
+          <div id="add_hitbox">
+            <h2>Saisissez un nom de hitbox à ajouter.</h2>
+            <input type="text" id="hitbox_name">
+            <div class="add_hitbox_car">
+              <h4 class="input_car">Entrez un nom de voiture</h3>
+              <input type="text" id="car1_name">
+              <h4 class="input_car">Entrez l'url de l'image de la voiture</h3>
+              <input type="text" id="car1_image">
+              <h4 class="input_car">N'hésitez pas à mettre un commentaire sur cette voiture</h3>
+              <input type="text" id="car1_commentaire">
+            </div>
+            <!-- <div class="add_hitbox_car">
+              <input type="text" id="car2_name">
+              <input type="text" id="car2_image">
+              <input type="text" id="car2_commentaire">
+            </div>
+            <div class="add_hitbox_car">
+              <input type="text" id="car3_name">
+              <input type="text" id="car3_image">
+              <input type="text" id="car3_commentaire">
+            </div>
+            <div class="add_hitbox_car">
+              <input type="text" id="car4_name">
+              <input type="text" id="car4_image">
+              <input type="text" id="car4_commentaire">
+            </div>
+            <div class="add_hitbox_car">
+              <input type="text" id="car5_name">
+              <input type="text" id="car5_image">
+              <input type="text" id="car5_commentaire">
+            </div> -->
+            <button class="add_list_btn" onclick="add_car_list()">+</button>
+          </div>
+        </div>
+      </main>
+      <script type="text/javascript">
+          function callHitbox(e){
+            console.log(e);
+            show_list(e);
+        }
+     </script>
+      <script type="text/javascript" src="js/hitbox.js"></script>
+      <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="js/native.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
     </body>
-</html>
+  </html>
