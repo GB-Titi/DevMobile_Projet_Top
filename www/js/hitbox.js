@@ -24,12 +24,10 @@ function add_car_list(){
 
     //on récupère notre liste des hitbox pour y ajouter la nouvelle (obligé de parse pour récupérer un objet)
     let liste_hitbox = JSON.parse(window.localStorage.getItem("liste_hitbox"));
-    // console.log(liste_hitbox);
-    // console.log(typeof(liste_hitbox));
 
     //.assign permet d'ajouter la nouvelle hitbox à notre liste qui est un objet
     Object.assign(liste_hitbox, {[list_name]: list_name});
-    // console.log(liste_hitbox);
+    localStorage.setItem("liste_hitbox", JSON.stringify(liste_hitbox));
 
     //on créer les div à ajouter dans le menu gauche
     let ul = document.getElementById("all_lists");
@@ -80,10 +78,6 @@ function show_list(list_name){
     console.log(list_name);
     //On récupère les carac de la voiture listé
     let car = JSON.parse(window.localStorage.getItem(list_name));
-    // console.log(car);
-    // console.log(typeof(car));
-
-    // console.log(divCar);
 
     let divListActive = document.getElementById("active_list");
     divListActive.innerHTML = "";

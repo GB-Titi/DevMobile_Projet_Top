@@ -13,10 +13,6 @@ var app = {
   onDeviceReady: function () {},
 };
 
-let liste_hitbox = new Object();
-liste_hitbox.octane = "octane";
-liste_hitbox.hybride = "hybride"
-window.localStorage.setItem("liste_hitbox", JSON.stringify(liste_hitbox));
-console.log(liste_hitbox);
+init_hitboxes();
 
 app.initialize();

@@ -109,7 +109,7 @@ body {
 .button_holder{
 	width: 100%;
     height: max-content;
-    position: absolute;
+    position: static;
     bottom: 0;
     right: 0;
     display: flex;
@@ -180,6 +180,7 @@ body {
 	box-shadow:inset 0 1px 0 rgb(255,255,255);
 	text-indent: 20px;
 	text-transform: capitalize;
+	word-wrap: break-word;
 }
 .slidebar li:hover a {
 	background-color: rgb(255,255,255);
@@ -360,9 +361,85 @@ body {
 
 #add_hitbox{
 	display: none;
+	flex-direction: column;
+	width: 80%;
+	margin: 20px auto;
+	border: solid 2px white;
+	border-radius: 15px;
+	padding: 10px;
 }
 
 #active_list{
 	display: flex;
 	flex-direction: column;
+}
+
+.car{
+	width: 50%;
+    background-color: #7e9fb7;
+    padding: 10px;
+    height: max-content;
+    border: solid 2px black;
+    border-radius: 15px;
+    margin: 20px auto;
+}
+
+.car_image{
+	width: 100%;
+	padding: 15px;
+}
+
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 480px) {
+	.main .topbar{
+		display: none;
+	}
+	.main{
+		width: 75%;
+	}
+	.slidebar{
+		width: 25%;
+	}
+	.img_logo{
+		width: 100%;
+		height: auto;
+		padding: 5px;
+	}
+	.slidebar .logo{
+		height: max-content;
+	}
+	.slidebar ul h5{
+		display: none;
+	}
+	.slidebar ul a{
+		padding-left: 5px;
+		text-indent: 0%;
+	}
+	.button_holder{
+		flex-direction: column;
+	}
+	.ynov_logo{
+		width: 90%;
+		margin: auto;
+	}
+	.add_list_btn{
+		width: 90%;
+		margin: auto;
+	}
+	.car{
+		width: 90%;
+	}
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+	
 }
