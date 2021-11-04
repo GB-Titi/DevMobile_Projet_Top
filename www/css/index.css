@@ -100,10 +100,11 @@ body {
 	min-height: 100vh;
 	float: left;
 	border-right: 1px solid rgb(235,235,235);
-    background-image: url(../img/fond.jpg);
-    background-position: right;
-    background-size: cover;
-	position: relative;
+	background-image: url(../img/fond.jpg);
+	background-position: right;
+	background-size: cover;
+	position: fixed;
+	z-index: 1;
 }
 
 .button_holder{
@@ -182,6 +183,9 @@ body {
 	text-transform: capitalize;
 	word-wrap: break-word;
 }
+.slidebar ul a:active {
+background-color: white;
+}
 .slidebar li:hover a {
 	background-color: rgb(255,255,255);
     color: rgb(140,140,140);
@@ -203,6 +207,9 @@ body {
     background-image: url(../img/fond.jpg);
     background-position: right;
     background-size: cover;
+	position: fixed;
+	width: 83%;
+    margin-left: 17%;
 }
 
 /*topbar*/
@@ -364,14 +371,25 @@ body {
 	flex-direction: column;
 	width: 80%;
 	margin: 20px auto;
+	padding: 10px;
+	margin-left: 30%;
+    padding-top: 8%;
+}
+
+.add_hitbox_car{
 	border: solid 2px white;
 	border-radius: 15px;
-	padding: 10px;
+	padding:10px;
+	margin: 10px;
+	background-color: #7e9fb7;
 }
 
 #active_list{
 	display: flex;
 	flex-direction: column;
+	margin-left: 17%;
+    padding-top: 7%;
+    width: 83%;
 }
 
 .car{
@@ -429,6 +447,13 @@ body {
 	}
 	.car{
 		width: 90%;
+	}
+	#active_list{
+		margin-left: 40%;
+	}
+	#add_hitbox{
+		margin-left: 40%;
+		width: 90% !important;
 	}
 }
 

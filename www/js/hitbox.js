@@ -19,8 +19,34 @@ function add_car_list(){
     car1.image = document.getElementById('car1_image').value;
     car1.commentaire = commentaire = document.getElementById('car1_commentaire').value;
 
+    let car2 = new Object();
+    car2.name = document.getElementById('car2_name').value;
+    car2.image = document.getElementById('car2_image').value;
+    car2.commentaire = commentaire = document.getElementById('car2_commentaire').value;
+
+    let car3 = new Object();
+    car3.name = document.getElementById('car3_name').value;
+    car3.image = document.getElementById('car3_image').value;
+    car3.commentaire = commentaire = document.getElementById('car3_commentaire').value;
+
+    let car4 = new Object();
+    car4.name = document.getElementById('car4_name').value;
+    car4.image = document.getElementById('car4_image').value;
+    car4.commentaire = commentaire = document.getElementById('car4_commentaire').value;
+
+    let car5 = new Object();
+    car5.name = document.getElementById('car5_name').value;
+    car5.image = document.getElementById('car5_image').value;
+    car5.commentaire = commentaire = document.getElementById('car5_commentaire').value;
+
+    //on formate l'info à envoyer au local storage pour avoir un JSON stringifié avec le bon contenu
+    let complete_list = JSON.stringify(car1) + "," + JSON.stringify(car2) + "," + JSON.stringify(car3) + "," + JSON.stringify(car4) + "," + JSON.stringify(car5);
+    let string_complete_list = JSON.stringify(complete_list);
+    let json_complete_list = JSON.parse(string_complete_list);
+    json_complete_list = "[" + json_complete_list + "]";
+
     //on stock la voiture dans le local storage
-    window.localStorage.setItem(list_name, JSON.stringify(car1));
+    window.localStorage.setItem(list_name, json_complete_list);
 
     //on récupère notre liste des hitbox pour y ajouter la nouvelle (obligé de parse pour récupérer un objet)
     let liste_hitbox = JSON.parse(window.localStorage.getItem("liste_hitbox"));
@@ -57,6 +83,7 @@ function add_car_list(){
 //définition de la div de la liste des voitures
 const divCar = `
 <div class="car">
+    <p style="text-align: left; font-weight: bold; padding: 5px; margin: 5px">__compteur__</p>
     <h4>__name__</h4>
     <div class="car_content">
         <img src="__src__" class="car_image" />
@@ -76,18 +103,24 @@ const htmlToElement = (html) => {
 
 function show_list(list_name){
     console.log(list_name);
+    document.getElementById('add_hitbox').style.display = "none";
+    document.getElementById('active_list').style.display = "flex";
+    
     //On récupère les carac de la voiture listé
     let car = JSON.parse(window.localStorage.getItem(list_name));
 
     let divListActive = document.getElementById("active_list");
     divListActive.innerHTML = "";
-    // json.forEach((manga, i) => {
-    const newDivCar = divCar
-        .replace("__name__", car.name)
-        .replace("__src__", car.image)
-        // .replace("__top__", i + 1)
-        // .replace("__title__", car.name)
-        .replace("__commentaire__", car.commentaire);
+    car.forEach((element, i) => {
+        const newDivCar = divCar
+            .replace("__compteur__", i+1)
+            .replace("__name__", element.name)
+            .replace("__src__", element.img)
+            // .replace("__top__", i + 1)
+            // .replace("__title__", car.name)
+            .replace("__commentaire__", element.description);
 
-    divListActive.appendChild(htmlToElement(newDivCar));
+        divListActive.appendChild(htmlToElement(newDivCar));
+        i++;
+    });
 }

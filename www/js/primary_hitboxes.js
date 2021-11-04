@@ -2,7 +2,7 @@ function init_hitboxes(){
     if(localStorage.getItem('liste_hitbox') == null){
         let liste_hitbox = new Object();
         liste_hitbox.octane = "octane";
-        liste_hitbox.hybride = "hybride";
+        liste_hitbox.hybrides = "hybrides";
         window.localStorage.setItem("liste_hitbox", JSON.stringify(liste_hitbox));
     }
     
@@ -24,21 +24,17 @@ function init_hitboxes(){
       ul.appendChild(li);
     });
 
-    function readTextFile(file, callback) {
-      var rawFile = new XMLHttpRequest();
-      rawFile.overrideMimeType("application/json");
-      rawFile.open("GET", file, true);
-      rawFile.onreadystatechange = function() {
-          if (rawFile.readyState === 4 && rawFile.status == "200") {
-              callback(rawFile.responseText);
-          }
-      }
-      rawFile.send(null);
-   }
-  
-  //usage:
-  readTextFile("../api/octane.json", function(text){
-      var data = JSON.parse(text);
-      console.log(data);
-  });
+    var octane = $.getJSON( "../api/octane.json", function() {
+        console.log( "success" );
+      })
+        .always(function() {
+        window.localStorage.setItem("octane", octane.responseText);
+    });
+
+    var hybrides = $.getJSON( "../api/hybrides.json", function() {
+        console.log( "success" );
+      })
+        .always(function() {
+        window.localStorage.setItem("hybrides", hybrides.responseText);
+    });
 }
