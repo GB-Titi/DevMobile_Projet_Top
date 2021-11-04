@@ -1,0 +1,390 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+	background: linear-gradient(
+		126deg, rgba(96,180,226,1) 0%, rgba(0,30,82,1) 88%, rgba(0,30,82,1) 100%);
+    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+    font-size:12px;
+    height:100vh !important;
+    margin:0px !important;
+    padding:0px !important;
+    /* Padding to avoid the "unsafe" areas behind notches in the screen */
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+    width:100% !important;
+}
+
+.container-fluid{
+    padding: 0px !important;
+}
+
+
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+    margin: 0px !important;
+}
+
+.img_logo{
+    width: 144px;
+    height: 144px;
+    display: flex;
+}
+
+.img_top_menu{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+body {
+	background-color: rgb(220,220,220);
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+	font-family: sans-serif;
+}
+.clearfix:after {
+	content: "";
+	display: block;
+	height: 0;
+	width: 0;
+	clear: both;
+}
+
+/*slidebar*/
+.slidebar {
+	width: 17%;
+	min-height: 100vh;
+	float: left;
+	border-right: 1px solid rgb(235,235,235);
+    background-image: url(../img/fond.jpg);
+    background-position: right;
+    background-size: cover;
+	position: relative;
+}
+
+.button_holder{
+	width: 100%;
+    height: max-content;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+	flex-direction: row;
+    justify-content: flex-start;
+}
+
+.add_list_btn{
+	width: 80px;
+	height: 40px;
+	border-radius: 5%;
+	margin: auto 10px 10px 10px;
+	display: inline-block;
+	text-decoration: none;
+	background: #f7f7f7;
+	border-left: solid 6px rgb(0, 91, 184);
+	color: rgb(0, 91, 184);
+	font-weight: bold;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+}
+
+.ynov_logo{
+    width: 40%;
+    height: auto;
+    padding: 10px;
+    margin-left: auto;
+}
+
+.add_list_btn:active {
+	box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+	transform: translateY(2px);
+}
+
+.slidebar .logo {
+	height: 145px;
+}
+.slidebar ul {
+	padding: 0;
+	margin:0;
+}
+.slidebar li {
+	list-style-type: none;
+	margin: 0;
+	position: relative;
+}
+.slidebar li:before {
+	content: "";
+	font-family: 'icomoon';
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	position: absolute;
+	display: block;
+	line-height: 40px;
+	color: white;
+	right: 20px;
+	-webkit-font-smoothing: antialiased;
+}
+
+.slidebar ul a {
+	color: white;
+	text-decoration: none;
+	font:16px/40px helvetica,verdana,sans-serif;
+	box-sizing:border-box;
+	border-bottom: 1px solid rgb(235,235,235);
+	display: block;
+	box-shadow:inset 0 1px 0 rgb(255,255,255);
+	text-indent: 20px;
+	text-transform: capitalize;
+}
+.slidebar li:hover a {
+	background-color: rgb(255,255,255);
+    color: rgb(140,140,140);
+	box-shadow: 1px 0 0 rgb(255,255,255),inset 5px 0 0 -1px rgb(0, 91, 184);
+}
+
+/*main*/
+.main {
+	float: left;
+	width: 83%;
+	height: max-content;
+	position: relative;
+	font-family: helvetica,verdana,sans-serif;
+}
+.main .topbar {
+	border-bottom: 1px solid rgb(235,235,235);
+	margin: 0;
+	padding: 0;
+    background-image: url(../img/fond.jpg);
+    background-position: right;
+    background-size: cover;
+}
+
+/*topbar*/
+.topbar li {
+	float: right;
+	list-style: none;
+    padding: 10px;
+	width: 10%;
+    display: flex;
+    justify-content: center;
+}
+.topbar li:first-child {float: left; width: 80% !important}
+.topbar a {
+	font-family: 'icomoon';
+	display: block;
+	line-height: 50px;
+	width: 50px;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+    transition-duration: 2.5ms;
+}
+.topbar a:hover {
+	transform: scale(1.2);
+}
+
+/*mainContent*/
+.mainContent h4 {
+	line-height: 1;
+	font-size: 18px;
+	margin: 1.3em 0 1em;
+	margin-left: 17px;
+}
+
+.statusbar {
+	position: fixed;
+	bottom: 0;
+	border-top: 1px solid rgb(235,235,235);
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+.statusbar li {
+	list-style: none;
+}
+.statusbar a {
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+}
+.statusbar a:hover {
+	background-color: rgb(247,247,247);
+}
+.statusbar .profiles-setting, .statusbar .logout {
+	float: right;
+}
+.statusbar .profiles-setting a, .statusbar .logout a {
+	font-family: 'icomoon';
+	width: 49px;
+	height: 49px;
+	line-height: 50px;
+	border-left: 1px solid rgb(235,235,235);
+}
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot');
+	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+	url('fonts/icomoon.woff') format('woff'),
+	url('fonts/icomoon.ttf') format('truetype'),
+	url('fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+
+@media screen and (prefers-color-scheme: dark) {
+    body {
+        background-image:linear-gradient(to bottom, #585858 0%, #1B1B1B 51%);
+    }
+}
+
+/* OOPS PAGE (OFFLINE) */
+.oops_field{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	text-align: center;
+	justify-content: center;
+	height: 50%;
+	margin: 25px auto;
+	position: relative;
+}
+
+.oops_field img{
+	width: 400px;
+	height: 400px;
+	margin-right: 30px;
+}
+
+.oops_text{
+	display: flex;
+	flex-direction: column;
+	color: black;
+	font-weight: bold;
+}
+
+.oops_text h2{
+	text-align: left;
+	text-decoration: underline;
+}
+
+.oops_font{
+	font-family: 'TAPEMAN', sans-serif;
+	font-size: 7rem;
+	text-align: left;
+	margin: 0Px;
+	padding: 0px;
+}
+
+.octane{
+	background-image: url("../img/hitboxes/octane/octane_bg.png");
+	width: 50%;
+	border: solid 2px white;
+	height:auto;
+	padding: 2% 2% 2% 25%;
+	margin: 25px auto;
+    background-size: cover;
+	min-height: 60%;
+	background-color:#d9dbdb;
+}
+
+.octane h4{
+	font-weight: bold;
+	text-decoration: underline;
+	text-transform: uppercase;
+	margin-left: 0px;
+	padding-left: 0px;
+}
+
+.description_octane{
+	color: black;
+}
+
+#add_hitbox{
+	display: none;
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	margin: 20px auto;
+	border: solid 2px white;
+	border-radius: 15px;
+	padding: 10px;
+}
+
+#active_list{
+	display: flex;
+	flex-direction: column;
+}
+
+.car{
+	width: 50%;
+    background-color: #7e9fb7;
+    padding: 10px;
+    height: max-content;
+    border: solid 2px black;
+    border-radius: 15px;
+    margin: 20px auto;
+}
+
+.car_image{
+	width: 100%;
+	padding: 15px;
+}
