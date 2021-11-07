@@ -8,7 +8,7 @@ Sur la page d'accueil on arrive sur une simple vidéo et la possiblité de lance
 
 Le menu de gauche permet de lister les liste déjà crées (deux sont là de base : la liste octane et la liste hybrides). Mais également de crée une nouvelle liste avec le boutton prévu à cet effet.
 
-`***L'image rocket league dans le menu permet de retourner à l'accueil***`
+***`L'image rocket league dans le menu permet de retourner à l'accueil`***
 
 ***Rocket Leaste*** est mon application pour le `Module developpement mobile d'Ynov` visant à crée une PWA de création de top.
 
