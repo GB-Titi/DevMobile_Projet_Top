@@ -78,6 +78,8 @@ function add_car_list(){
     document.getElementById('car1_image').value = "";
     document.getElementById('car1_commentaire').value = "";
     document.getElementById('hitbox_name').value = "";
+
+    // validation_vibration;
 }
 
 //définition de la div de la liste des voitures
@@ -116,8 +118,6 @@ function show_list(list_name){
             .replace("__compteur__", i+1)
             .replace("__name__", element.name)
             .replace("__src__", element.img)
-            // .replace("__top__", i + 1)
-            // .replace("__title__", car.name)
             .replace("__commentaire__", element.description);
 
         divListActive.appendChild(htmlToElement(newDivCar));

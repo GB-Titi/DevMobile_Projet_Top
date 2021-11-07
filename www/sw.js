@@ -1,3 +1,4 @@
+/** VARS */
 const ORIGIN_URL = `${location.protocol}//${location.host}`;
 const CACHE_NAME = "offline-v3";
 const OFFLINE_URL = "offline.html";
@@ -12,7 +13,6 @@ const CACHED_FILES = [
   `${ORIGIN_URL}/img/pwa.png`,
   `${ORIGIN_URL}/img/cordova.png`,
 ];
-
 /** FUNCTIONS */
 
 /** Fetch */

@@ -2,13 +2,16 @@
 <html>
   <head>
     <script>
-      window.addEventListener("load", () => {
-        if ("serviceWorker" in navigator) {
-          navigator.serviceWorker
-          .register("sw.js", { scope: "./" })
-          .then(function (reg) {});
-        }
-      });
+    window.addEventListener("load", () => {
+        if ("cordova" in window) {
+        } else {
+          if ("serviceWorker" in navigator) {
+            navigator.serviceWorker
+              .register("sw.js", { scope: "./" })
+              .then(function (reg) {});
+          }
+        };
+      })
     </script>
     <link rel="manifest" href="manifest.json" />
     <script type="text/javascript" src="api/octane.json"></script>
@@ -68,7 +71,32 @@
           <li><a href="https://cordova.apache.org/" style="width: max-content;"><img
                 class="img_top_menu" src="img/cordova.png" /></a></li>
         </ul>
-        <div class="mainContent clearfix">
+        <div class="mainContent clearfix" style="margin-left: auto; width:70%; margin-top:10%">
+          <div id="accueil">
+            <h1>Bienvenue sur RocketLeast</h1>
+            <div class="content_accueil">
+              <div class="ac_video">
+                <video width="100%" height="auto" controls Autoplay=autoplay muted loop>
+                  <source src="medias/video/reset_musty.mp4" type=video/mp4>
+                </video>
+              </div>
+              <div class="ac_audio">
+                <div class="audio_btns">
+                  <button id = "playAudio">PLAY</button>
+                  <button id = "pauseAudio">PAUSE</button>
+                  <button id = "stopAudio">STOP</button>
+                  <button id = "volumeUp">VOLUME UP</button>
+                  <button id = "volumeDown">VOLUME DOWN</button>
+                  <button id = "ff"><<</button>
+                  <button id = "rew">>></button>
+                </div>
+                <div class="audio_txt">
+                  <h3>Voilà un petit thème RocketLeague à mettre en fond pendant que tu réfléchis à tes meilleurs listes de voitures</h3>
+                  <p>Tu peux même te matter la petite vidéo tranquilou</p>
+                </div>
+              </div>
+            </div>
+          </div>
           <div id="active_list">
             <!-- <div class="octane">
               <h4>L'octane : </h4>

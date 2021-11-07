@@ -5,7 +5,8 @@ function init_hitboxes(){
         liste_hitbox.hybrides = "hybrides";
         window.localStorage.setItem("liste_hitbox", JSON.stringify(liste_hitbox));
     }
-    
+
+    console.log("Init_hitbox lancé");
     /* == INITIALISATION DE LA LISTE DES HITBOX DU LOCAL STORAGE */
     //on récupère d'abord la liste
     let active_list = JSON.parse(window.localStorage.getItem("liste_hitbox"));
@@ -25,14 +26,14 @@ function init_hitboxes(){
     });
 
     var octane = $.getJSON( "../api/octane.json", function() {
-        console.log( "success" );
+        console.log( "JSON octane chargé" );
       })
         .always(function() {
         window.localStorage.setItem("octane", octane.responseText);
     });
 
     var hybrides = $.getJSON( "../api/hybrides.json", function() {
-        console.log( "success" );
+        console.log( "JSON" );
       })
         .always(function() {
         window.localStorage.setItem("hybrides", hybrides.responseText);
