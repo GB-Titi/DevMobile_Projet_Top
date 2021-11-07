@@ -387,19 +387,18 @@ background-color: white;
 #active_list{
 	display: flex;
 	flex-direction: column;
-	margin-left: 17%;
     padding-top: 7%;
-    width: 83%;
+    width: 100%;
 }
 
 .car{
-	width: 50%;
+	width: 80%;
     background-color: #7e9fb7;
-    padding: 10px;
+    padding: 5px;
     height: max-content;
     border: solid 2px black;
     border-radius: 15px;
-    margin: 20px auto;
+    margin: 5px auto;
 }
 
 .car_image{
@@ -449,7 +448,7 @@ background-color: white;
 		width: 90%;
 	}
 	#active_list{
-		margin-left: 40%;
+		margin-left: 5%;
 	}
 	#add_hitbox{
 		margin-left: 40%;
