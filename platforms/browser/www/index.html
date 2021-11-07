@@ -1,93 +1,166 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script>
-      window.addEventListener("load", () => {
+
+<head>
+  <script>
+    window.addEventListener("load", () => {
+      if ("cordova" in window) {
+      } else {
         if ("serviceWorker" in navigator) {
           navigator.serviceWorker
-          .register("sw.js", { scope: "./" })
-          .then(function (reg) {});
+            .register("sw.js", { scope: "./" })
+            .then(function (reg) { });
         }
-      });
-    </script>
-    <link rel="manifest" href="manifest.json" />
+      };
+    })
+  </script>
+  <link rel="manifest" href="manifest.json" />
+  <script type="text/javascript" src="api/octane.json"></script>
+  <script type="text/javascript" src="api/hybrides.json"></script>
 
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <meta
-      name="viewport"
-      content="initial-scale=1, width=device-width, viewport-fit=cover"
-      />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover" />
 
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
-      crossorigin="anonymous"
-      />
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous" />
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
-      crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+    crossorigin="anonymous"></script>
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <title>Rocket Leaste</title>
-  </head>
+  <title>Rocket Leaste</title>
+</head>
 
-  <body>
-    <main class="container-fluid">
-      <div class="slidebar">
-        <div class="logo">
-          <a class="" href="#"><img class="img_logo" src="img/logo.png" /></a>
-        </div>
-        <ul>
-          <h5 style="color: white; padding: 3px; margin-top: 15px;
+<body>
+  <main class="container-fluid">
+    <div class="slidebar">
+      <div class="logo">
+        <a class="" href=""><img class="img_logo" src="img/logo.png" /></a>
+      </div>
+      <ul>
+        <h5 style="color: white; padding: 3px; margin-top: 15px;
             text-decoration: underline">Liste des hitboxes :</h5>
-        </ul>
-        <ul id="all_lists">
-         
-        </ul>
+      </ul>
+      <ul id="all_lists">
+
+      </ul>
+      <div class="left_nemu_bottom">
         <div class="button_holder">
           <button class="add_list_btn" onclick="add_hibox()">+</button>
           <img class="ynov_logo" src="img/logo_ynov_campus_rvb_blanc.png" />
         </div>
+        <div class="audio_btns">
+          <span style="color: black; padding-bottom: 10px;">Gestion musique : </span>
+          <div class="plays_btn">
+            <button id="playAudio_menu" class="btn btn-light" data-toggle="button" aria-pressed="false"
+              autocomplete="off"></button>
+            <button id="pauseAudio_menu" class="btn btn-light" data-toggle="button" aria-pressed="false"
+              autocomplete="off"></button>
+          </div>
+          <div class="volume_btn">
+            <button id="volumeUp_menu" class="btn btn-light" data-toggle="button"></button>
+            <button id="volumeDown_menu" class="btn btn-light" data-toggle="button"></button>
+          </div>
+          <div class="ff_btn">
+            <button id="ff_menu" class="btn btn-light" data-toggle="button"></button>
+            <button id="rew_menu" class="btn btn-light" data-toggle="button"></button>
+          </div>
+        </div>
       </div>
-      <div class="main">
-        <ul class="topbar clearfix">
-          <li><a href="#" style="width: max-content;"><h1 style="color: white
-                !important;">Rocket Leaste</h1></a></li>
-          <li><a
-              href="https://developer.mozilla.org/fr/docs/Web/Progressive_web_apps"
-              style="width: max-content;"><img class="img_top_menu"
-                src="img/pwa.png" /></a></li>
-          <li><a href="https://cordova.apache.org/" style="width: max-content;"><img
-                class="img_top_menu" src="img/cordova.png" /></a></li>
-        </ul>
-        <div class="mainContent clearfix">
-          <div id="active_list">
-            <!-- <div class="octane">
+    </div>
+    <div class="main">
+      <ul class="topbar clearfix">
+        <li><a href="#" style="width: max-content;">
+            <h1 style="color: white
+                !important;">Rocket Leaste</h1>
+          </a></li>
+        <li><a href="https://developer.mozilla.org/fr/docs/Web/Progressive_web_apps" style="width: max-content;"><img
+              class="img_top_menu" src="img/pwa.png" /></a></li>
+        <li><a href="https://cordova.apache.org/" style="width: max-content;"><img class="img_top_menu"
+              src="img/cordova.png" /></a></li>
+      </ul>
+      <div class="mainContent clearfix" style="margin-left: auto; width:100%; margin-top:5%">
+        <div id="accueil">
+          <div class="content_accueil">
+            <div class="ac_video">
+              <video width="90%" height="auto" controls Autoplay=autoplay muted loop style="margin-right: 15px">
+                <source src="medias/video/reset_musty.mp4" type=video/mp4>
+              </video>
+              <div class="audio_btns">
+                <button id="playAudio" class="btn btn-light" data-toggle="button" aria-pressed="false"
+                  autocomplete="off"></button>
+                <button id="pauseAudio" class="btn btn-light" data-toggle="button" aria-pressed="false"
+                  autocomplete="off"></button>
+                <button id="volumeUp" class="btn btn-light" data-toggle="button" aria-pressed="false"
+                  autocomplete="off"></button>
+                <button id="volumeDown" class="btn btn-light" data-toggle="button" aria-pressed="false"
+                  autocomplete="off"></button>
+                <button id="ff" class="btn btn-light" data-toggle="button" aria-pressed="false"
+                  autocomplete="off"></button>
+                <button id="rew" class="btn btn-light" data-toggle="button" aria-pressed="false"
+                  autocomplete="off"></button>
+              </div>
+            </div>
+            <i><p style="color: lightgrey; text-decoration: underline;">Wall reset to musty - No bounce - Credit : GrosBoule#8083 on discord</p></i>
+          </div>
+        </div>
+        <div id="active_list">
+          <!-- <div class="octane">
               <h4>L'octane : </h4>
               <p class="description_octane">Ceci est une decription. Ceci est
                 une decription. Ceci est une decription. Ceci est une
                 decription. Ceci est une decription. Ceci est une decription.
                 Ceci est une decription. </p>
             </div> -->
-          </div>
-          <div id="add_hitbox">
-            <h2>Saisissez un nom de hitbox à ajouter.</h2>
-            <input type="text" id="hitbox_name">
-            <div class="add_hitbox_car">
-              <h4 class="input_car">Entrez un nom de voiture</h3>
+        </div>
+        <div id="add_hitbox">
+          <h2>Saisissez un nom de hitbox à ajouter.</h2>
+          <input type="text" id="hitbox_name">
+          <div class="add_hitbox_car">
+            <h4 class="input_car">Entrez un nom de voiture</h3>
               <input type="text" id="car1_name">
               <h4 class="input_car">Entrez l'url de l'image de la voiture</h3>
-              <input type="text" id="car1_image">
-              <h4 class="input_car">N'hésitez pas à mettre un commentaire sur cette voiture</h3>
-              <input type="text" id="car1_commentaire">
-            </div>
-            <!-- <div class="add_hitbox_car">
+                <input type="text" id="car1_image">
+                <h4 class="input_car">N'hésitez pas à mettre un commentaire sur cette voiture</h3>
+                  <input type="text" id="car1_commentaire">
+          </div>
+          <div class="add_hitbox_car">
+            <h4 class="input_car">Entrez un nom de voiture</h3>
+              <input type="text" id="car2_name">
+              <h4 class="input_car">Entrez l'url de l'image de la voiture</h3>
+                <input type="text" id="car2_image">
+                <h4 class="input_car">N'hésitez pas à mettre un commentaire sur cette voiture</h3>
+                  <input type="text" id="car2_commentaire">
+          </div>
+          <div class="add_hitbox_car">
+            <h4 class="input_car">Entrez un nom de voiture</h3>
+              <input type="text" id="car3_name">
+              <h4 class="input_car">Entrez l'url de l'image de la voiture</h3>
+                <input type="text" id="car3_image">
+                <h4 class="input_car">N'hésitez pas à mettre un commentaire sur cette voiture</h3>
+                  <input type="text" id="car3_commentaire">
+          </div>
+          <div class="add_hitbox_car">
+            <h4 class="input_car">Entrez un nom de voiture</h3>
+              <input type="text" id="car4_name">
+              <h4 class="input_car">Entrez l'url de l'image de la voiture</h3>
+                <input type="text" id="car4_image">
+                <h4 class="input_car">N'hésitez pas à mettre un commentaire sur cette voiture</h3>
+                  <input type="text" id="car4_commentaire">
+          </div>
+          <div class="add_hitbox_car">
+            <h4 class="input_car">Entrez un nom de voiture</h3>
+              <input type="text" id="car5_name">
+              <h4 class="input_car">Entrez l'url de l'image de la voiture</h3>
+                <input type="text" id="car5_image">
+                <h4 class="input_car">N'hésitez pas à mettre un commentaire sur cette voiture</h3>
+                  <input type="text" id="car5_commentaire">
+          </div>
+          <!-- <div class="add_hitbox_car">
               <input type="text" id="car2_name">
               <input type="text" id="car2_image">
               <input type="text" id="car2_commentaire">
@@ -107,20 +180,25 @@
               <input type="text" id="car5_image">
               <input type="text" id="car5_commentaire">
             </div> -->
-            <button class="add_list_btn" onclick="add_car_list()">+</button>
-          </div>
+          <button class="add_list_btn" onclick="add_car_list()">+</button>
         </div>
-      </main>
-      <script type="text/javascript">
-        function callHitbox(e){
-            console.log(e);
-            show_list(e);
-        }
-     </script>
-      <script type="text/javascript" src="js/hitbox.js"></script>
-      <script type="text/javascript" src="cordova.js"></script>
-      <script type="text/javascript" src="js/native.js"></script>
-      <script type="text/javascript" src="js/primary_hitboxes.js"></script>
-      <script type="text/javascript" src="js/index.js"></script>
-    </body>
-  </html>
+      </div>
+  </main>
+  <script type="text/javascript">
+    function callHitbox(e) {
+      show_list(e);
+    };
+    function retour_accueil() {
+      document.getElementById('add_hitbox').style.display = "none";
+      document.getElementById('accueil').style.display = "flex";
+      document.getElementById('active_list').style.display = "none";
+    }
+  </script>
+  <script type="text/javascript" src="js/hitbox.js"></script>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="js/native.js"></script>
+  <script type="text/javascript" src="js/primary_hitboxes.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>
