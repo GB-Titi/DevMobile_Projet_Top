@@ -29,4 +29,4 @@ Le menu de gauche permet de lister les liste déjà crées (deux sont là de bas
 >-` Offline`
 
 
-### `***J'ai surement oublié des choses dans les fonctionnalités***`
+### ***`J'ai surement oublié des choses dans les fonctionnalités`***
