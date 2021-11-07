@@ -25,8 +25,8 @@ Le menu de gauche permet de lister les liste déjà crées (deux sont là de bas
 >- `Batteries :` Le check des batteries est effectué, si la batterie change : console.log
 >- `openInAppBrowser` (dans le code = openInaudioBrowserOptions car un ctrl + F où j'ai remplacé tout les "app" par "audio") : tout les liens sont ouverts dans le device et non en externe. (liens sur les bouttons du menu haut cordova et pwa)
 >- `Vibrations `: histoire de l'utiliser mais pas possible a tester sur desktop. Lorsqu'on valide notre formulaire c'est censé faire vibrer l'écran et mettre un message dans la console
->- `Modal `
->-` Offline`
+>- `Modal`
+>- `Offline`
 
 
 ### ***`J'ai surement oublié des choses dans les fonctionnalités`***
