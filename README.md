@@ -2,7 +2,7 @@
 
 ## Description du projet 
 
-L'objectif de ce projet est de crée une application PWA avec cordova sur laquelle on peut crée des listes de top. On peut dans ces tops créer 5 éléments qui seront stockés dans le local storage et affiché si besoin.
+L'objectif de ce projet est de crée une application PWA avec cordova sur laquelle on peut crée des listes de top. On peut dans ces tops créer 5 éléments qui seront stockés dans le local storage et affichées si besoin.
 
 Sur la page d'accueil on arrive sur une simple vidéo et la possiblité de lancer de la musique. Cette gestion de musique se retrouve dans le menu gauche afin de permettre sa gestion dans n'importe quelle page de l'application.
 
@@ -27,3 +27,6 @@ Le menu de gauche permet de lister les liste déjà crées (deux sont là de bas
 >- Vibrations : histoire de l'utiliser mais pas possible a tester sur desktop. Lorsqu'on valide notre formulaire c'est censé faire vibrer l'écran et mettre un message dans la console
 >- Modal 
 >- Offline
+
+
+###***J'ai surement oublié des choses dans les fonctionnalités***
