@@ -1,4 +1,4 @@
-var app = {
+var app = {   
   // Application Constructor
   initialize: function () {
     document.addEventListener(
@@ -14,6 +14,7 @@ var app = {
   // 'pause', 'resume', etc.
   onDeviceReady: function () {
     deviceReady();
+    start_audio();
   },
 };
 

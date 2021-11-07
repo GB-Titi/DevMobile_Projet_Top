@@ -1,28 +1,27 @@
 [
-    {
-      "name": "Scarab",
-      "description": "Plus qu'annodine elle incarne le troll et l'irespect sur ce jeux. Comme peu le savent elle pssède une hitbox octane et est donc très simple à jouer.",
-      "img": "img/mangas/onepiece.jpghttps://preview.redd.it/pgobm2t4v5s31.jpg?auto=webp&s=f939f059ba5eaf2ec12c7d54dfd3b0efd46627e2",
-    },
-    {
-      "name": "Fennec",
-      "description": "Rien à ajouter.",
-      "img": "https://pbs.twimg.com/media/E52l650XIAEe1cO.jpg",
-    },
-    {
-      "name": "Takumi",
-      "description": "Comme skip, petit mais puissant! Un style à tout épreuve et une hitbox octane, que demande le peuple ?",
-      "img": "https://videogamemods.com/rocketleague/wp-content/uploads/sites/12/cmdm/163947/1480461070_20161129022903_1-1600x900.jpg",
-    },
-    {
-      "name": "Octane",
-      "description": "L'incontournable, voilà tout",
-      "img": "https://bp-prod.nyc3.digitaloceanspaces.com/uploads/736_689b9e0495255480d222997583796ba868847c6a48f1ce65ec8d31e9791b9495.png",
-    },
-    {
-      "name": "Takumi RX-T",
-      "description": "J'avoue j'aime trop la la takumi pour pas aimer la RX-T",
-      "img": "https://www.xtrafondos.com/wallpapers/takumi-rx-t-de-rocket-league-artwork-6423.jpg",
-    }
-  ]
-  
+  {
+    "name": "Esper",
+    "description": "Tout le monde rigole de moi, jusqu'à qu'ils se fassent goumer par ma esper",
+    "img": "https://external-preview.redd.it/Yl8C-C1yhV5g6RMao5aGEVVBqp3xMskJjQkdHgELX5s.jpg?auto=webp&s=7a8857c4b02f69e63d853b2a3448223e492d9c37"
+  },
+  {
+    "name": "Nimbus",
+    "description": "Elle est vraaaaaaaiment pépite",
+    "img": "https://www.goldkk.com/upload/20210331/6375278369071809569773576.jpg"
+  },
+  {
+    "name": "Fast and Furious Nissan Skyline",
+    "description": "Incontournable",
+    "img": "https://www.sitegeek.fr/wp-content/uploads/2017/10/rl_ff_dlc_nissan-skyline_decal_3_preview.jpeg"
+  },
+  {
+    "name": "Insidio",
+    "description": "Y'a un truc quand même",
+    "img": "https://img.rl.insider.gg/ingameViews/small/q4ElWXnT5V30IRZp11ukGmQKL2eTtKBB.jpg"
+  },
+  {
+    "name": "Venom",
+    "description": "Pour le kiff",
+    "img": "https://i.redd.it/6evnnkwrqqs01.jpg"
+  }
+]

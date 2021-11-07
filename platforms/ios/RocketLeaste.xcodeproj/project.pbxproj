@@ -14,6 +14,10 @@
 		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
 		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
+		E98A9356A2584C26BFEB9E1A /* CDVFile.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8ACFB7AFF04873B87C2D12 /* CDVFile.m */; };
+		D8313F3E61014B129ED7F98E /* CDVLocalFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = B889BDCDC1A048BDA64A71A2 /* CDVLocalFilesystem.m */; };
+		5F5437A387424B7CAD4C009C /* CDVAssetLibraryFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F0A688FE6649609D0D347E /* CDVAssetLibraryFilesystem.m */; };
+		4D35B39555F2452EB6F06C24 /* CDVSound.m in Sources */ = {isa = PBXBuildFile; fileRef = AC76C87432974C2BAB878D66 /* CDVSound.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,14 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "RocketLeaste/config.xml"; sourceTree = "<group>"; };
+		EB8ACFB7AFF04873B87C2D12 /* CDVFile.m */ = {isa = PBXFileReference; name = "CDVFile.m"; path = "cordova-plugin-file/CDVFile.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		B889BDCDC1A048BDA64A71A2 /* CDVLocalFilesystem.m */ = {isa = PBXFileReference; name = "CDVLocalFilesystem.m"; path = "cordova-plugin-file/CDVLocalFilesystem.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		B3F0A688FE6649609D0D347E /* CDVAssetLibraryFilesystem.m */ = {isa = PBXFileReference; name = "CDVAssetLibraryFilesystem.m"; path = "cordova-plugin-file/CDVAssetLibraryFilesystem.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		14F96B8C90E54FDEBC982579 /* CDVFile.h */ = {isa = PBXFileReference; name = "CDVFile.h"; path = "cordova-plugin-file/CDVFile.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		05CBBBECC35846F1A661E4FA /* CDVLocalFilesystem.h */ = {isa = PBXFileReference; name = "CDVLocalFilesystem.h"; path = "cordova-plugin-file/CDVLocalFilesystem.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		09563A23239B4E8780314604 /* CDVAssetLibraryFilesystem.h */ = {isa = PBXFileReference; name = "CDVAssetLibraryFilesystem.h"; path = "cordova-plugin-file/CDVAssetLibraryFilesystem.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		AC76C87432974C2BAB878D66 /* CDVSound.m */ = {isa = PBXFileReference; name = "CDVSound.m"; path = "cordova-plugin-media/CDVSound.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		842AF07ABEE546CC8E5A2601 /* CDVSound.h */ = {isa = PBXFileReference; name = "CDVSound.h"; path = "cordova-plugin-media/CDVSound.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +177,14 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				EB8ACFB7AFF04873B87C2D12 /* CDVFile.m */,
+				B889BDCDC1A048BDA64A71A2 /* CDVLocalFilesystem.m */,
+				B3F0A688FE6649609D0D347E /* CDVAssetLibraryFilesystem.m */,
+				14F96B8C90E54FDEBC982579 /* CDVFile.h */,
+				05CBBBECC35846F1A661E4FA /* CDVLocalFilesystem.h */,
+				09563A23239B4E8780314604 /* CDVAssetLibraryFilesystem.h */,
+				AC76C87432974C2BAB878D66 /* CDVSound.m */,
+				842AF07ABEE546CC8E5A2601 /* CDVSound.h */,
 			);
 			name = Plugins;
 			path = "RocketLeaste/Plugins";
@@ -293,6 +313,10 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
+				E98A9356A2584C26BFEB9E1A /* CDVFile.m in Sources */,
+				D8313F3E61014B129ED7F98E /* CDVLocalFilesystem.m in Sources */,
+				5F5437A387424B7CAD4C009C /* CDVAssetLibraryFilesystem.m in Sources */,
+				4D35B39555F2452EB6F06C24 /* CDVSound.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

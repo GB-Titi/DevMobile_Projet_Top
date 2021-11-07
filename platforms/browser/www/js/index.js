@@ -1,5 +1,5 @@
-var app = {
-  // Constructeur de l'application
+var app = {   
+  // Application Constructor
   initialize: function () {
     document.addEventListener(
       "deviceready",
@@ -7,12 +7,16 @@ var app = {
       false
     );
   },
-  
+
+  // deviceready Event Handler
+  //
   // Bind any cordova events here. Common events are:
   // 'pause', 'resume', etc.
-  onDeviceReady: function () {},
+  onDeviceReady: function () {
+    deviceReady();
+    start_audio();
+  },
 };
 
-init_hitboxes();
-
 app.initialize();
+init_hitboxes();
